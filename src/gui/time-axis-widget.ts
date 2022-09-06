@@ -19,6 +19,11 @@ import { ChartWidget } from './chart-widget';
 import { MouseEventHandler, MouseEventHandlers, MouseEventHandlerTouchEvent, TouchMouseEvent } from './mouse-event-handler';
 import { PriceAxisStub, PriceAxisStubParams } from './price-axis-stub';
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 const enum Constants {
 	BorderSize = 1,
 	TickLength = 5,

@@ -32,7 +32,8 @@
     "node": ">=16.16.0"
   },
   "dependencies": {
-    "fancy-canvas": "0.2.2"
+    "fancy-canvas": "0.2.2",
+    "happy-dom": "^6.0.4"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "~13.3.0",
@@ -58,9 +59,9 @@
     "eslint-plugin-markdown": "~3.0.0",
     "eslint-plugin-mdx": "~1.17.0",
     "eslint-plugin-prefer-arrow": "~1.2.3",
+    "eslint-plugin-react": "~7.30.1",
     "eslint-plugin-tsdoc": "~0.2.16",
     "eslint-plugin-unicorn": "~40.1.0",
-    "eslint-plugin-react": "~7.30.1",
     "express": "~4.18.1",
     "glob": "~8.0.3",
     "markdown-it": "~13.0.1",

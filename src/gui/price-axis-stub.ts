@@ -10,6 +10,11 @@ import { PriceAxisRendererOptionsProvider } from '../renderers/price-axis-render
 import { createBoundCanvas, getContext2D, Size } from './canvas-utils';
 import { PriceAxisWidgetSide } from './price-axis-widget';
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 export interface PriceAxisStubParams {
 	rendererOptionsProvider: PriceAxisRendererOptionsProvider;
 }

@@ -5,6 +5,10 @@ import { ChartOptions } from '../model/chart-model';
 
 import { ChartApi } from './chart-api';
 import { IChartApi } from './ichart-api';
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document;
 
 /**
  * This function is the main entry point of the Lightweight Charting Library.
@@ -16,7 +20,7 @@ import { IChartApi } from './ichart-api';
 export function createChart(container: string | HTMLElement, options?: DeepPartial<ChartOptions>): IChartApi {
 	let htmlElement: HTMLElement;
 	if (isString(container)) {
-		const element = document.getElementById(container);
+		const element = document.getElementById(container) as unknown as HTMLElement;
 		assert(element !== null, `Cannot find element in DOM with id=${container}`);
 		htmlElement = element;
 	} else {

@@ -23,6 +23,11 @@ import { ChartWidget } from './chart-widget';
 import { MouseEventHandler, MouseEventHandlerEventBase, MouseEventHandlerMouseEvent, MouseEventHandlers, MouseEventHandlerTouchEvent, Position, TouchMouseEvent } from './mouse-event-handler';
 import { PriceAxisWidget, PriceAxisWidgetSide } from './price-axis-widget';
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 const enum KineticScrollConstants {
 	MinScrollSpeed = 0.2,
 	MaxScrollSpeed = 7,

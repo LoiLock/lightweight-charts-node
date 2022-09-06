@@ -24,6 +24,11 @@ import { createPreconfiguredCanvas, getCanvasDevicePixelRatio, getContext2D, Siz
 import { PaneWidget } from './pane-widget';
 import { TimeAxisWidget } from './time-axis-widget';
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 export interface MouseEventParamsImpl {
 	time?: OriginalTime;
 	index?: TimePointIndex;
@@ -57,14 +62,14 @@ export class ChartWidget implements IDestroyable {
 	public constructor(container: HTMLElement, options: ChartOptionsInternal) {
 		this._options = options;
 
-		this._element = document.createElement('div');
+		this._element = document.createElement('div') as unknown as HTMLDivElement;
 		this._element.classList.add('tv-lightweight-charts');
 		this._element.style.overflow = 'hidden';
 		this._element.style.width = '100%';
 		this._element.style.height = '100%';
 		disableSelection(this._element);
 
-		this._tableElement = document.createElement('table');
+		this._tableElement = document.createElement('table') as unknown as HTMLTableElement;
 		this._tableElement.setAttribute('cellspacing', '0');
 		this._element.appendChild(this._tableElement);
 
@@ -131,7 +136,7 @@ export class ChartWidget implements IDestroyable {
 	public destroy(): void {
 		this._element.removeEventListener('wheel', this._onWheelBound);
 		if (this._drawRafId !== 0) {
-			window.cancelAnimationFrame(this._drawRafId);
+			window.cancelAnimationFrame(this._drawRafId as unknown as NodeJS.Timeout);
 		}
 
 		this._model.crosshairMoved().unsubscribeAll(this);
@@ -551,7 +556,7 @@ export class ChartWidget implements IDestroyable {
 						}
 					}
 				}
-			});
+			}) as unknown as number;
 		}
 	}
 

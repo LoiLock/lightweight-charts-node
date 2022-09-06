@@ -22,6 +22,11 @@ import { createBoundCanvas, getContext2D, Size } from './canvas-utils';
 import { MouseEventHandler, MouseEventHandlers, TouchMouseEvent } from './mouse-event-handler';
 import { PaneWidget } from './pane-widget';
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 export type PriceAxisWidgetSide = Exclude<PriceScalePosition, 'overlay'>;
 
 const enum CursorType {

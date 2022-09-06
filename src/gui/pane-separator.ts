@@ -8,6 +8,11 @@ import { PaneWidget } from './pane-widget';
 
 export const SEPARATOR_HEIGHT = 1;
 
+import { Window } from 'happy-dom';
+
+const window = new Window();
+const document = window.document as unknown as Document;
+
 export class PaneSeparator implements IDestroyable {
 	private readonly _chartWidget: ChartWidget;
 	private readonly _rowElement: HTMLTableRowElement;
